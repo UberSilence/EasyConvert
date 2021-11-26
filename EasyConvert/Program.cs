@@ -4,14 +4,12 @@ using System.Collections.Generic;
 namespace EasyConvert {
     class Program {
         static void Main() {
-            Menu();
-            Console.ReadKey();
-        }
-
-        static void Menu() {
             int choice;
-            Console.Write("What do you want to do?\n1 - Convert Decimal To Other Base\n2 - Convert Other Base To Decimal\n3 - Exit\nChoice: ");
-            choice = Convert.ToInt32(Console.ReadLine());
+
+            do {
+                Console.Write("What do you want to do?\n1 - Convert Decimal To Other Base\n2 - Convert Other Base To Decimal\n3 - Exit\nChoice: ");
+                choice = Convert.ToInt32(Console.ReadLine());
+            } while ((choice != 1) || (choice != 2));
 
             switch (choice) {
                 case 1:
@@ -21,10 +19,10 @@ namespace EasyConvert {
                     OtherBaseToDecimal();
                     break;
                 default:
-                    Console.WriteLine("Invalid choice.");
-                    Menu();
+                    Console.WriteLine("Error.");
                     break;
             }
+            Console.ReadKey();
         }
 
         static void DecimalToOtherBase() {
